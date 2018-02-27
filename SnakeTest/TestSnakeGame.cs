@@ -6,25 +6,21 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit;
 using NUnit.Framework;
-using Snake;
+using SevenSnake;
 
 namespace SnakeTest
 {
     [TestFixture]
-    public class Class1
+    public class TestSnakeGame
     {
         const string fileName = "D:\\SnakeFile\\SnakeTestFile.CSV";
         [Test]
         public void TestLoadFile()
         {
-
-            
             var map = new SnakeMap();
-            var snake = new SevenSnake(map);
+            var snake = new SnakeGame(map);
             snake.LoadFile(fileName);
             Assert.IsTrue(snake.SnakeMap.Map.Count>0, "Not load SnakeMap");
-
-
         }
 
         [SetUp]
@@ -36,8 +32,6 @@ namespace SnakeTest
             }
 
         }
-
-
 
         private static void CreateSnakeFile()
         {
@@ -62,11 +56,25 @@ namespace SnakeTest
         public void TestReadCells()
         {
             var map = new SnakeMap();
-            var snake = new SevenSnake(map);
+            var snake = new SnakeGame(map);
             snake.LoadFile(fileName);
             snake.SnakeMap.BuildMapCell();
             Assert.IsTrue(snake.SnakeMap.MapCells.Count > 0, "Not load Cell SnakeMap");
 
         }
+
+        [Test]
+        public void TestShareCell()
+        {
+           throw new NotImplementedException();
+        }
+
+        [Test]
+        public void TestPlayGame()
+        {
+           throw new NotImplementedException();
+        }
+
+
     }
 }

@@ -40,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SevenSnake.cs" />
+    <Compile Include="Snake.cs" />
+    <Compile Include="SnakeGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SnakeCell.cs" />
     <Compile Include="SnakeMap.cs" />

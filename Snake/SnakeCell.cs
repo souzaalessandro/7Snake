@@ -6,7 +6,7 @@ using System.Linq;
 using System.Security.AccessControl;
 using System.Security.Cryptography.X509Certificates;
 
-namespace Snake
+namespace SevenSnake
 {
     public class SnakeCell
     {
@@ -14,6 +14,8 @@ namespace Snake
         public int Line;
         public int Colunm;
         public string Value;
+        public Snake Snake;
+
         
         public SnakeCell(SnakeMap map)
         {

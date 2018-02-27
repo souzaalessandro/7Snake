@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Snake
+namespace SevenSnake
 {
-    public class SevenSnake
+    public class SnakeGame
     {
         private readonly SnakeMap _snakeMap;
 
         public SnakeMap SnakeMap => _snakeMap;
 
-        public SevenSnake(SnakeMap snakeMap)
+        public SnakeGame(SnakeMap snakeMap)
         {
             _snakeMap = snakeMap;
         }
