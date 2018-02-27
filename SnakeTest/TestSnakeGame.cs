@@ -41,10 +41,10 @@ namespace SnakeTest
                 snakeFile.WriteLine("36; 95; 229; 209; 49; 230; 46; 16; 190; 49");
                 snakeFile.WriteLine("206; 130; 85; 67; 104; 93; 128; 243; 38; 173");
                 snakeFile.WriteLine("234; 82; 191; 153; 170; 99; 124; 60; 12; 31");
-                snakeFile.WriteLine("192; 9; 24; 127; 183; 241; 139; 21; 244; 66");
-                snakeFile.WriteLine("93; 200; 66; 16; 189; 42; 209; 113; 215; 4");
-                snakeFile.WriteLine("182; 141; 153; 64; 229; 55; 115; 139; 12; 187");
-                snakeFile.WriteLine("133; 241; 35; 255; 126; 39; 110; 147; 24; 241");
+                snakeFile.WriteLine("192; 9; 24; 127; 183; 241; 139; 3; 2; 1");
+                snakeFile.WriteLine("93; 200; 66; 16; 189; 42; 209; 4; 215; 4");
+                snakeFile.WriteLine("182; 141; 153; 64; 229; 55; 115; 5; 6; 187");
+                snakeFile.WriteLine("133; 241; 35; 255; 126; 39; 110; 147; 7; 241");
                 snakeFile.WriteLine("2; 202; 191; 159; 223; 128; 154; 109; 6; 200");
                 snakeFile.WriteLine("173; 44; 163; 196; 159; 232; 135; 159; 117; 175");
 
@@ -66,7 +66,19 @@ namespace SnakeTest
         [Test]
         public void TestShareCell()
         {
-           throw new NotImplementedException();
+          
+            var map = new SnakeMap();
+            var snakeGame = new SnakeGame(map);
+            snakeGame.LoadFile(fileName);
+            snakeGame.SnakeMap.BuildMapCell();
+            var snake1 = new Snake();
+            snakeGame.Play(snake1);
+            Assert.IsTrue(snake1.Cells.Count==7 ,"Falhou na busca 1");
+            var snake2 = new Snake();
+            snakeGame.Play(snake2);
+            Assert.IsTrue(snake2.Cells.Count == 7, "Falhou na busca 2");
+
+
         }
 
         [Test]

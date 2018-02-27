@@ -1,5 +1,6 @@
 ﻿// 
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace SevenSnake
             {
                 for (var j = 0; j < Map[i].Length; j++)
                 {
-                    var cell = new SnakeCell(this) { Line = i, Colunm = j, Value = Map[i][j] };
+                    var cell = new SnakeCell(this) { Line = i, Colunm = j, Value = Convert.ToInt16(Map[i][j]) };
                     MapCells.Add(cell);
                 }
             }
@@ -39,7 +40,6 @@ namespace SevenSnake
                 throw new FileNotFoundException("Please check name file or file exists in informed path");
 
             Map = File.ReadAllLines(fileName)
-                    .Skip(1)
                     .Select(ln => ln.Split(';'))
                     .ToList();
 
